@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
-const ListItem = styled.li`
-  font-weight: bold;
-  margin-bottom: 20px;
-`;
+import styles from "./CommandItem.module.css";
 
 const CommandItem = ({ text, handleOnClick }) => {
   const [selected, setSelected] = useState(false);
@@ -13,14 +9,15 @@ const CommandItem = ({ text, handleOnClick }) => {
   const handleMouseLeave = () => setSelected(false);
 
   return (
-    <ListItem
+    <li
+      className={styles.listItem}
       onClick={handleOnClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {selected ? ">" : null}
       {text}
-    </ListItem>
+    </li>
   );
 };
 export default CommandItem;

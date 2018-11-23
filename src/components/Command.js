@@ -1,23 +1,11 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
 
 import CommandItem from "./CommandItem";
 import GameContext from "../contexts/GameContext";
 
-const Wrapper = styled.div`
-  float: left;
-  /* width: 130px; */
-  width: 130px;
-  height: 180px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 2px;
-  border: #fff 3px solid;
-  .commandUl {
-    list-style: none;
-  }
-`;
-const NewCommand = () => {
+import styles from "./Command.module.css";
+
+const Command = () => {
   const { selectAnswer, currentQuiz } = useContext(GameContext);
   const commandList = currentQuiz.answerOptions.map(answerOption => (
     <CommandItem
@@ -27,10 +15,10 @@ const NewCommand = () => {
     />
   ));
   return (
-    <Wrapper>
-      <ul className="commandUl">{commandList}</ul>
-    </Wrapper>
+    <div className={styles.wrapper}>
+      <ul className={styles.commandUl}>{commandList}</ul>
+    </div>
   );
 };
 
-export default NewCommand;
+export default Command;

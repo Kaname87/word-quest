@@ -1,30 +1,7 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
-import GameContext from "../contexts/GameContext";
 
-const Table = styled.table`
-  /* border: 1px solid white; */
-  margin-left: 160px;
-  padding: 20px;
-  height: 300px;
-  line-height: 22px;
-  border-radius: 2px;
-  border: #fff 3px solid;
-  thead {
-    font-size: 25px;
-  }
-  th,
-  tr,
-  td {
-    border: 1px solid white;
-  }
-  .correct {
-    color: green;
-  }
-  .wrong {
-    color: red;
-  }
-`;
+import GameContext from "../contexts/GameContext";
+import styles from "./GameResult.module.css";
 
 const GameResult = () => {
   const { answerHistory, restart, isDefeated } = useContext(GameContext);
@@ -42,8 +19,8 @@ const GameResult = () => {
         Total: {correctAnswers.length} / {answerHistory.length}
       </div>
 
-      <Table>
-        <thead>
+      <table className={styles.wrapper}>
+        <thead className={styles.border}>
           <tr>
             <th>Question</th>
             <th>Your Answer</th>
@@ -52,18 +29,18 @@ const GameResult = () => {
         </thead>
         <tbody>
           {answerHistory.map(answer => (
-            <tr key={answer.targetWord}>
-              <th>{answer.targetWord}</th>
-              <td>{answer.option}</td>
+            <tr key={answer.targetWord} className={styles.border}>
+              <th className={styles.border}>{answer.targetWord}</th>
+              <td className={styles.border}>{answer.option}</td>
               {answer.isCorrect ? (
-                <td className="correct">√</td>
+                <td className={styles.correct}>√</td>
               ) : (
-                <td className="wrong">X</td>
+                <td className={styles.wrong}>X</td>
               )}
             </tr>
           ))}
         </tbody>
-      </Table>
+      </table>
 
       {!isDefeated && <div>You're experence increased by 2 </div>}
       <button onClick={restart}>Restart?</button>
