@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 
 import HeaderStatus from "./HeaderStatus";
 import TargetScreen from "./TargetScreen";
@@ -11,25 +10,7 @@ import GameContext from "../contexts/GameContext";
 import { ANSWER_TYPE } from "../constants/constants";
 import quizzes from "../data/quiz";
 
-const Container = styled.div`
-  position: relative;
-  height: auto;
-  min-height: 100%;
-  background: black;
-  color: #fff;
-`;
-
-const Main = styled.div`
-  width: 800px;
-  margin: 0 auto;
-  padding: 20px 0;
-  font-weight: bold;
-  height: 800px;
-`;
-
-const Footer = styled.div`
-  padding-bottom: 10px;
-`;
+import styles from "./App.module.css";
 
 const player = {
   name: "Beginner",
@@ -146,18 +127,18 @@ class App extends Component {
 
     return this.state.isDefeated || this.state.isFinished ? (
       <React.Fragment>
-        <Footer>
+        <div className={styles.Footer}>
           <GameResult />
-        </Footer>
+        </div>
       </React.Fragment>
     ) : (
       <React.Fragment>
         <HeaderStatus />
         <TargetScreen />
-        <Footer>
+        <div className={styles.Footer}>
           <Command />
           <Message />
-        </Footer>
+        </div>
       </React.Fragment>
     );
   };
@@ -167,13 +148,13 @@ class App extends Component {
       <React.Fragment>
         <header className="App-header" />
 
-        <Container>
-          <Main>
+        <div className={styles.container}>
+          <div className={styles.main}>
             <GameContext.Provider value={this.state}>
               {this.renderMain()}
             </GameContext.Provider>
-          </Main>
-        </Container>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

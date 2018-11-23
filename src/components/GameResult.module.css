@@ -1,0 +1,19 @@
+.wrapper {
+  margin-left: 160px;
+  padding: 20px;
+  height: 300px;
+  line-height: 22px;
+  border-radius: 2px;
+  border: #fff 3px solid;
+}
+.border {
+  border: 1px solid white;
+}
+.correct {
+  border: 1px solid white;
+  color: green;
+}
+.wrong {
+  border: 1px solid white;
+  color: red;
+}
