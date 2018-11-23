@@ -9,6 +9,7 @@ const GameResult = () => {
     if (answer.isCorrect) {
       return answer;
     }
+    return null;
   });
 
   return (

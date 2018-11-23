@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 
-import HeaderStatus from "./HeaderStatus";
-import TargetScreen from "./TargetScreen";
-import Command from "./Command";
-import Message from "./Message";
+import GameStart from "./GameStart";
+import GameOngoing from "./GameOngoing";
 import GameResult from "./GameResult";
 
+import Main from "./layout/Main";
 import GameContext from "../contexts/GameContext";
 import { ANSWER_TYPE } from "../constants/constants";
 import quizzes from "../data/quiz";
-
-import styles from "./App.module.css";
 
 const player = {
   name: "Beginner",
@@ -81,6 +78,10 @@ class App extends Component {
     });
   };
 
+  start = () => {
+    this.setState({ isStarted: true });
+  };
+
   state = {
     answerType: ANSWER_TYPE.NOT_YET,
     selectAnswer: this.selectAnswer,
@@ -93,6 +94,7 @@ class App extends Component {
     isStarted: false,
     answerHistory: [],
     restart: this.restart,
+    start: this.start,
     ...player
   };
 
@@ -103,18 +105,7 @@ class App extends Component {
 
   renderMain = () => {
     if (!this.state.isStarted) {
-      return (
-        <React.Fragment>
-          <div>Filipino - English Exam</div>
-          <button
-            onClick={() => {
-              this.setState({ isStarted: true });
-            }}
-          >
-            Start?
-          </button>
-        </React.Fragment>
-      );
+      return <GameStart />;
     }
 
     if (this.state.quizzes.length === 0) {
@@ -126,20 +117,9 @@ class App extends Component {
     }
 
     return this.state.isDefeated || this.state.isFinished ? (
-      <React.Fragment>
-        <div className={styles.Footer}>
-          <GameResult />
-        </div>
-      </React.Fragment>
+      <GameResult />
     ) : (
-      <React.Fragment>
-        <HeaderStatus />
-        <TargetScreen />
-        <div className={styles.Footer}>
-          <Command />
-          <Message />
-        </div>
-      </React.Fragment>
+      <GameOngoing />
     );
   };
 
@@ -147,14 +127,11 @@ class App extends Component {
     return (
       <React.Fragment>
         <header className="App-header" />
-
-        <div className={styles.container}>
-          <div className={styles.main}>
-            <GameContext.Provider value={this.state}>
-              {this.renderMain()}
-            </GameContext.Provider>
-          </div>
-        </div>
+        <Main>
+          <GameContext.Provider value={this.state}>
+            {this.renderMain()}
+          </GameContext.Provider>
+        </Main>
       </React.Fragment>
     );
   }
