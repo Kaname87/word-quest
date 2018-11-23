@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Slime.module.css";
+import styles from "./Slime.module.scss";
 
 const Slime = ({ word }) => {
   return (
