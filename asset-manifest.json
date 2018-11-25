@@ -1,13 +1,14 @@
 {
-  "main.css": "/word-quest/static/css/main.90fdfdb8.chunk.css",
-  "main.js": "/word-quest/static/js/main.37a8ba9e.chunk.js",
-  "main.js.map": "/word-quest/static/js/main.37a8ba9e.chunk.js.map",
-  "static/js/1.a371e097.chunk.js": "/word-quest/static/js/1.a371e097.chunk.js",
-  "static/js/1.a371e097.chunk.js.map": "/word-quest/static/js/1.a371e097.chunk.js.map",
+  "main.css": "/word-quest/static/css/main.a0d2921a.chunk.css",
+  "main.js": "/word-quest/static/js/main.5b5bddd6.chunk.js",
+  "main.js.map": "/word-quest/static/js/main.5b5bddd6.chunk.js.map",
+  "static/js/1.da212df8.chunk.js": "/word-quest/static/js/1.da212df8.chunk.js",
+  "static/js/1.da212df8.chunk.js.map": "/word-quest/static/js/1.da212df8.chunk.js.map",
   "runtime~main.js": "/word-quest/static/js/runtime~main.3f5e2a9e.js",
   "runtime~main.js.map": "/word-quest/static/js/runtime~main.3f5e2a9e.js.map",
-  "static/css/main.90fdfdb8.chunk.css.map": "/word-quest/static/css/main.90fdfdb8.chunk.css.map",
+  "static/media/baybayin.jpeg": "/word-quest/static/media/baybayin.34903407.jpeg",
+  "static/css/main.a0d2921a.chunk.css.map": "/word-quest/static/css/main.a0d2921a.chunk.css.map",
   "index.html": "/word-quest/index.html",
-  "precache-manifest.af938a2a42ac9db76fdca9d0df38d0d2.js": "/word-quest/precache-manifest.af938a2a42ac9db76fdca9d0df38d0d2.js",
+  "precache-manifest.90f70a81c221b57bc6e45eaa27cb6752.js": "/word-quest/precache-manifest.90f70a81c221b57bc6e45eaa27cb6752.js",
   "service-worker.js": "/word-quest/service-worker.js"
 }
