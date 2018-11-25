@@ -10,19 +10,21 @@ const TargetScreen = () => {
   const { answerType, currentQuiz } = useContext(GameContext);
 
   let answerClass = "";
+  let wrapperClass = "wrapper";
   switch (answerType) {
     case ANSWER_TYPE.CORRECT:
       answerClass = "correct";
       break;
     case ANSWER_TYPE.WRONG:
       answerClass = "wrong";
+      wrapperClass = "wrongWrapper";
       break;
     default:
       break;
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles[wrapperClass]}>
       <div className={styles.targetContainer}>
         <div className={styles[answerClass]}>
           {/* <Slime word={currentQuiz.targetWord} /> */}
