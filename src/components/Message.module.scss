@@ -1,0 +1,11 @@
+@import "../scss/border";
+
+.wrapper {
+  @extend %border-shared;
+  margin-left: 10px;
+  float: left;
+  padding: 0 20px;
+  height: 100%;
+  width: 70%;
+  margin-bottom: 22px;
+}

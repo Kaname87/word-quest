@@ -91,7 +91,9 @@ class App extends Component {
     message: "What does this word mean in Tagalog?",
     currentQuiz: {},
     isFinished: false,
-    isStarted: false,
+    // isStarted: false,
+    isStarted: true,
+
     answerHistory: [],
     restart: this.restart,
     start: this.start,
