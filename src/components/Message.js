@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "./Message.module.css";
+import styles from "./Message.module.scss";
 
 import GameContext from "../contexts/GameContext";
 

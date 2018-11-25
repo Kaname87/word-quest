@@ -1,0 +1,100 @@
+@import "../scss/border";
+
+@keyframes correct {
+  10% {
+    -webkit-transform: translate(0, 15px);
+    opacity: 0.5;
+  }
+  20% {
+    -webkit-transform: translate(0, -15px);
+    opacity: 0.8;
+  }
+  30% {
+    -webkit-transform: translate(0, 10px);
+    opacity: 0.5;
+  }
+  40% {
+    -webkit-transform: translate(0, -10px);
+    opacity: 0.8;
+  }
+  // 100% {
+  // letter-spacing: 1em;
+  // }
+  // 20% {
+  //   -webkit-transform: translate(35px);
+  // }
+  // 40% {
+  //   -webkit-transform: translate(-35px);
+  // }
+  // 60% {
+  //   -webkit-transform: translate(30px);
+  //   opacity: 0.8;
+  // }
+  // 80% {
+  //   -webkit-transform: translate(-30px);
+  //   opacity: 0.8;
+  // }
+  // 100% {
+  //   // letter-spacing: 1em;
+  // }
+}
+
+@keyframes wrong {
+  50% {
+    -webkit-transform: scale(1.6) rotate(-10deg);
+  }
+}
+@keyframes wrong2 {
+  10% {
+    -webkit-transform: translate(10px);
+    // opacity: 0.5;
+  }
+  20% {
+    -webkit-transform: translate(-10px);
+    // opacity: 0.8;
+  }
+}
+
+.wrapper {
+  margin: 1% 20%;
+  @extend %border-shared;
+
+  position: relative;
+  height: 300px;
+}
+
+.wrongWrapper {
+  @extend .wrapper;
+  animation-name: wrong2;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
+
+.targetContainer {
+  list-style: none;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+}
+/* .target {
+  text-align: center;
+
+  font-weight: bold;
+} */
+.correct {
+  text-align: center;
+  font-weight: bold;
+  animation-name: correct;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
+.wrong {
+  text-align: center;
+  font-weight: bold;
+  animation-name: wrong;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}

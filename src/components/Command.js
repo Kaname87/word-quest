@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import CommandItem from "./CommandItem";
 import GameContext from "../contexts/GameContext";
 
-import styles from "./Command.module.css";
+import styles from "./Command.module.scss";
 
 const Command = () => {
   const { selectAnswer, currentQuiz } = useContext(GameContext);
