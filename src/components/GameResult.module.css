@@ -17,3 +17,8 @@
   border: 1px solid white;
   color: red;
 }
+
+.result {
+  font-size: 30px;
+  text-align: center;
+}

@@ -3,10 +3,10 @@ import styles from "./Message.module.scss";
 
 import GameContext from "../contexts/GameContext";
 
-const Message = () => {
+const Message = ({ handleClick }) => {
   const { message } = useContext(GameContext);
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={handleClick}>
       <p>{message}</p>
     </div>
   );

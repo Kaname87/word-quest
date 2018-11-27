@@ -11,9 +11,9 @@ import quizzes from "../data/quiz";
 
 const player = {
   name: "Beginner",
-  level: 1,
   hp: 5,
   mp: 4,
+  level: 1,
   exp: 0
 };
 
@@ -54,10 +54,15 @@ class App extends Component {
       }
 
       const isFinished = currentIdx >= prevState.quizzes.length;
-
+      let message = "What does this word mean in Tagalog?";
+      if (prevState.isDefeated) {
+        message = "You lose.... You earned only word-experience";
+      } else if (isFinished) {
+        message = "You win! You earned word-experience and quest-experience";
+      }
       return {
         answerType: ANSWER_TYPE.NOT_YET,
-        message: "What does this word mean in Tagalog?",
+        message,
         currentIdx,
         isFinished,
         currentQuiz: isFinished
@@ -82,6 +87,21 @@ class App extends Component {
     this.setState({ isStarted: true });
   };
 
+  updateCharacter = earnedExp => {
+    this.setState(prevState => {
+      let exp = prevState.exp + earnedExp;
+      let level = prevState.level;
+      let message = prevState.message;
+      if (exp >= 2 && prevState.level === 1) {
+        exp = exp - 2;
+        level += prevState.level;
+        message = "You goes up to next level";
+      }
+
+      return { exp, level, message };
+    });
+  };
+
   state = {
     answerType: ANSWER_TYPE.NOT_YET,
     selectAnswer: this.selectAnswer,
@@ -93,11 +113,11 @@ class App extends Component {
     isFinished: false,
     isStarted: false,
     // isStarted: true,
-
+    ...player,
     answerHistory: [],
     restart: this.restart,
     start: this.start,
-    ...player
+    updateCharacter: this.updateCharacter
   };
 
   componentDidMount() {

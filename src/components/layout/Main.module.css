@@ -7,9 +7,7 @@
 }
 
 .main {
-  /* width: 800px; */
-  margin: 0 auto;
+  margin: 0 10%;
   padding: 20px 0;
   font-weight: bold;
-  /* height: 800px; */
 }

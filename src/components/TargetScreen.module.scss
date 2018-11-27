@@ -56,11 +56,12 @@
 }
 
 .wrapper {
-  margin: 1% 20%;
+  margin: 1% 15%;
   @extend %border-shared;
 
   position: relative;
   height: 300px;
+  overflow: auto;
 }
 
 .wrongWrapper {
@@ -72,7 +73,7 @@
 
 .targetContainer {
   list-style: none;
-  top: 10%;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;

@@ -1,4 +1,6 @@
 .footer {
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
   height: 200px;
+  display: flex;
+  padding: 0 15%;
 }

@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
 import GameContext from "../contexts/GameContext";
-import styles from "./Tagalog.module.css";
-import baybayin from "../image/baybayin.jpeg";
+import styles from "./GameStart.module.scss";
+import Experience from "./Experience";
 export default () => {
   const { start } = useContext(GameContext);
   return (
-    <React.Fragment>
-      <div>Filipino - English Quest</div>
-      <button onClick={start}>Start?</button>
-    </React.Fragment>
+    // <Experience />
+    <div className={styles.wrapper}>
+      <div className={styles.title}>
+        <div>Filipino - English Quest</div>
+        <button onClick={start}>Start?</button>
+      </div>
+    </div>
   );
 };

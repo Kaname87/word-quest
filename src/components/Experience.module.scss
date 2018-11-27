@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  border-collapse: collapse;
+}
+// .table {
+// }
+.row {
+  border-bottom: 0.1em grey solid;
+  padding-bottom: 1px;
+}
+.column {
+  display: inline-block;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  //   padding-top: 5%;
+}
+.columnWord {
+  @extend .column;
+  padding-right: 50px;
+  width: 100px;
+}
+.columnResult {
+  @extend .column;
+  margin-right: 1px;
+  //   padding-right: 50px;
+}
+.word {
+  font-size: 1.1em;
+}
+.meaning {
+  font-size: 1em;
+  font-weight: lighter;
+}
+.current {
+  padding-right: 10px;
+}
+// .title {
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   //   right: 0;
+//   //   position: absolute;
+//   //   margin: auto;
+// }
