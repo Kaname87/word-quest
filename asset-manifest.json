@@ -1,13 +1,13 @@
 {
   "main.css": "/word-quest/static/css/main.dea4ad9c.chunk.css",
-  "main.js": "/word-quest/static/js/main.c5fce23e.chunk.js",
-  "main.js.map": "/word-quest/static/js/main.c5fce23e.chunk.js.map",
+  "main.js": "/word-quest/static/js/main.10124f89.chunk.js",
+  "main.js.map": "/word-quest/static/js/main.10124f89.chunk.js.map",
   "static/js/1.8fb7e300.chunk.js": "/word-quest/static/js/1.8fb7e300.chunk.js",
   "static/js/1.8fb7e300.chunk.js.map": "/word-quest/static/js/1.8fb7e300.chunk.js.map",
   "runtime~main.js": "/word-quest/static/js/runtime~main.3f5e2a9e.js",
   "runtime~main.js.map": "/word-quest/static/js/runtime~main.3f5e2a9e.js.map",
   "static/css/main.dea4ad9c.chunk.css.map": "/word-quest/static/css/main.dea4ad9c.chunk.css.map",
   "index.html": "/word-quest/index.html",
-  "precache-manifest.fdf5c642f0d245a4830c7b6feaef1558.js": "/word-quest/precache-manifest.fdf5c642f0d245a4830c7b6feaef1558.js",
+  "precache-manifest.408b013b103c67af90d439051aaff30d.js": "/word-quest/precache-manifest.408b013b103c67af90d439051aaff30d.js",
   "service-worker.js": "/word-quest/service-worker.js"
 }
