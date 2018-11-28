@@ -2,24 +2,19 @@ import React, { useContext } from "react";
 
 import GameContext from "../contexts/GameContext";
 
-import styles from "./HeaderStatus.module.css";
+import styles from "./HeaderStatus.module.scss";
 
 const HeaderStatus = () => {
-  const { name, level, hp, mp } = useContext(GameContext);
+  const { name, level, hp, mp, exp } = useContext(GameContext);
   return (
     <div>
       <div className={styles.status}>
-        <ul className={styles.statusTitleUl}>
-          <li className={styles.statusTitleLi}>Name</li>
-          <li className={styles.statusTitleLi}>LV</li>
-          <li className={styles.statusTitleLi}>HP</li>
-          <li className={styles.statusTitleLi}>MP</li>
-        </ul>
         <ul className={styles.statusContentUl}>
           <li className={styles.statusContentLi}>{name}</li>
-          <li className={styles.statusContentLi}>{level}</li>
-          <li className={styles.statusContentLi}>{hp}</li>
-          <li className={styles.statusContentLi}>{mp}</li>
+          <li className={styles.statusContentLi}>H: {hp} </li>
+          <li className={styles.statusContentLi}>M: {mp}</li>
+          <li className={styles.statusContentLi}>Lv: {level}</li>
+          <li className={styles.statusContentLi}>Exp: {exp}</li>
         </ul>
       </div>
     </div>

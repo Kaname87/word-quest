@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 
 import GameContext from "../contexts/GameContext";
 
-// import HeaderStatus from "./HeaderStatus";
-import HeaderStatus2 from "./HeaderStatus2";
+import HeaderStatus from "./HeaderStatus";
 import Header from "./layout/Header";
 import TargetScreenWrapper from "./TargetScreenWrapper";
 // import Command from "./Command";
@@ -27,7 +26,7 @@ const GameResult = () => {
   return (
     <React.Fragment>
       <Header>
-        <HeaderStatus2 />
+        <HeaderStatus />
       </Header>
       <TargetScreenWrapper>
         <h2 className={styles.result}>WORD PROFICIENCY</h2>

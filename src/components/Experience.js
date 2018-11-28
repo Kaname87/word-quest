@@ -55,8 +55,7 @@ const Experience = () => {
         </div>
         <div className={styles.columnResult}>
           <ProgressBar percentage={percentage} />
-          <span className={styles.current}>Curernt: {exp.correct}</span>
-          <span className={styles.next}>Next:{exp.next}</span>
+          <span className={styles.current}>{percentage} %</span>
         </div>
       </div>
     );

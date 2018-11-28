@@ -112,7 +112,10 @@ class App extends Component {
     currentIdx: 0,
     isAnswered: false,
     quizzes: [],
-    messageList: ["What does this word mean in Tagalog?", "Choose your answer"],
+    messageList: [
+      "What does this word mean in Tagalog?",
+      "Choose your answer from the left options"
+    ],
     currentQuiz: {},
     isFinished: false,
     isStarted: false,
