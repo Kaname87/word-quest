@@ -63,9 +63,6 @@ class App extends Component {
       }
       messageList.push(message);
 
-      let exp = prevState.exp;
-      let level = prevState.level;
-
       let player = {};
       if (isFinished && !prevState.isDefeated) {
         console.log(1);
