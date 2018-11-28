@@ -23,7 +23,7 @@ const Experience = () => {
       next: 10
     },
     {
-      word: "masarao",
+      word: "masarap",
       meaning: "delicious",
       correct: 9,
       isCorrect: true,
