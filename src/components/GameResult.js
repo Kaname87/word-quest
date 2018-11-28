@@ -30,17 +30,11 @@ const GameResult = () => {
         <HeaderStatus2 />
       </Header>
       <TargetScreenWrapper>
-        <h2 className={styles.result}>WORD EXPERIENCE</h2>
+        <h2 className={styles.result}>WORD PROFICIENCY</h2>
         <Experience />
       </TargetScreenWrapper>
       <Footer>
-        <Message
-          handleClick={() => {
-            console.log(1);
-            const earnedExp = isDefeated ? 0 : 2;
-            updateCharacter(earnedExp);
-          }}
-        />
+        <Message />
       </Footer>
     </React.Fragment>
   );

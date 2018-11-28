@@ -1,13 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Message.module.scss";
 
 import GameContext from "../contexts/GameContext";
 
-const Message = ({ handleClick }) => {
-  const { message } = useContext(GameContext);
+const Message = () => {
+  const { messageList } = useContext(GameContext);
+  const [currentMessageIdx, updateCurrentMessageIdx] = useState(0);
+
+  const handleOnClickMessage = () => {
+    if (messageList.length > currentMessageIdx + 1) {
+      updateCurrentMessageIdx(currentMessageIdx + 1);
+    }
+  };
+
   return (
-    <div className={styles.wrapper} onClick={handleClick}>
-      <p>{message}</p>
+    <div className={styles.wrapper} onClick={handleOnClickMessage}>
+      <p>{messageList[currentMessageIdx]}</p>
     </div>
   );
 };

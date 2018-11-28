@@ -37,7 +37,7 @@ class App extends Component {
         isAnswered: true,
         isDefeated,
         hp,
-        message,
+        messageList: [message],
         answerType,
         answerHistory: [...prevState.answerHistory, selectedAnswer]
       };
@@ -53,21 +53,40 @@ class App extends Component {
         return;
       }
 
+      let messageList = [];
       const isFinished = currentIdx >= prevState.quizzes.length;
       let message = "What does this word mean in Tagalog?";
       if (prevState.isDefeated) {
-        message = "You lose.... You earned only word-experience";
+        message = "You lose.... You earned only word-proficiency";
       } else if (isFinished) {
-        message = "You win! You earned word-experience and quest-experience";
+        message = "You win! You earned word-proficiency and quest-experience";
       }
+      messageList.push(message);
+
+      let exp = prevState.exp;
+      let level = prevState.level;
+
+      let player = {};
+      if (isFinished && !prevState.isDefeated) {
+        console.log(1);
+        if (prevState.level === 1) {
+          // exp = prevState.exp - 2;
+          player.level = prevState.level + 1;
+          player.hp = 10;
+          player.mp = 8;
+          messageList.push("You goes up to next level !");
+        }
+      }
+
       return {
         answerType: ANSWER_TYPE.NOT_YET,
-        message,
+        messageList,
         currentIdx,
         isFinished,
         currentQuiz: isFinished
           ? prevState.quizzes[0]
-          : prevState.quizzes[currentIdx]
+          : prevState.quizzes[currentIdx],
+        ...player
       };
     });
   };
@@ -87,28 +106,13 @@ class App extends Component {
     this.setState({ isStarted: true });
   };
 
-  updateCharacter = earnedExp => {
-    this.setState(prevState => {
-      let exp = prevState.exp + earnedExp;
-      let level = prevState.level;
-      let message = prevState.message;
-      if (exp >= 2 && prevState.level === 1) {
-        exp = exp - 2;
-        level += prevState.level;
-        message = "You goes up to next level";
-      }
-
-      return { exp, level, message };
-    });
-  };
-
   state = {
     answerType: ANSWER_TYPE.NOT_YET,
     selectAnswer: this.selectAnswer,
     currentIdx: 0,
     isAnswered: false,
     quizzes: [],
-    message: "What does this word mean in Tagalog?",
+    messageList: ["What does this word mean in Tagalog?", "Choose your answer"],
     currentQuiz: {},
     isFinished: false,
     isStarted: false,
@@ -116,8 +120,7 @@ class App extends Component {
     ...player,
     answerHistory: [],
     restart: this.restart,
-    start: this.start,
-    updateCharacter: this.updateCharacter
+    start: this.start
   };
 
   componentDidMount() {
