@@ -5,7 +5,7 @@ import GameContext from "../contexts/GameContext";
 import HeaderStatus from "./HeaderStatus";
 import Header from "./layout/Header";
 import TargetScreenWrapper from "./TargetScreenWrapper";
-// import Command from "./Command";
+import Command from "./Command";
 import Message from "./Message";
 import Footer from "./layout/Footer";
 import Experience from "./Experience";
@@ -33,6 +33,7 @@ const GameResult = () => {
         <Experience />
       </TargetScreenWrapper>
       <Footer>
+        <Command />
         <Message />
       </Footer>
     </React.Fragment>

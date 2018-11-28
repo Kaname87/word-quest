@@ -95,6 +95,10 @@ class App extends Component {
       currentIdx: 0,
       answerType: ANSWER_TYPE.NOT_YET,
       answerHistory: [],
+      messageList: [
+        "What does this word mean in Tagalog?",
+        "Choose your answer from the left options"
+      ],
       ...player
     });
   };
